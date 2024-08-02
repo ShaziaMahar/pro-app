@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="box" style="margin-right: 60px;">
+    <form onsubmit="signup(event)">
+      <h1>
+        sigin
+      </h1>
+      <input type="text" placeholder="enter your email" id="email">
+      <input type="password" placeholder="password" id="password">
+      <button type="submit">submit</button>
+    </form>
+  </div>
+  <div>
+    <form onsubmit="login(event)">
+      <h1>
+        login
+      </h1>
+      <input type="text" placeholder="enter your email" id="login_email">
+      <input type="password" placeholder="password" id="login_password">
+      <button type="submit">login</button>
+      <button onclick="logout()">logout</button>
+    </form>
+  </div>
+  <div class="center" style="margin-left: 50px;">
+    <h1>your data</h1>
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAABXFBMVEX///+WWf////3//v////xQgv15af9Biv1TgP2JYP6WWP+CY/5Khf2pefeBZP5ndP+NXf9Xffxcev73+Pnu9Px0bP//+v/MyPV+Z//GzPXq6+7z8v1rcP+LX/5Jhf9pc/9eZvdid/718P43ffZbbv50YP7Qx/fTw/fl5ujVufo8evZCd/dOcvZ6VfhRc/5pZf6EVf+RT/ydZ/mxr7vHy/Xh5OLt8fDFp/i7nfTr4/2wfvOLQ/m2k/KUWvfgzPqjcPjr2fjKrfT35v60jfaufvzi0fvx6fmyj/WhnKfw6ei9v8mfprvPzM+8ws2Tipiytsaam67Iv8B0epiLhaGzwc6im5/N1d/V19PQyM+MkaOys7mbk5WporOlq7uBjJzS3ee61flhnvSMs/d3ifV+p/ugpvZ7mfitrPd4dPWxufmOgPOQufXL3fq2uO+VgvKNtvLI3/iSjfSmxvd8p/V+4v08AAAKR0lEQVR4nO2djV/buBnHFcmFzm0aiCl3MaEhXHs1d6zFBEzpGl7GNaMQXrpd6ZWjK22W0rCw9br///OZZMmx7AQSGVbz3PQlsSLHtpIfzyM/khULIY1Go9FoNBqNRqPRaDQajUaj0Wg0Go1Go9Fo4EMIGWij+FbBqov3H+joGs3/E5ZlsSdb0AfhCwuzBX1YHhLvkzAlch5Jea9zHHYEuorEtuMZxA+a9jdXBSPLsW1iWxZd8NTybOSnNn3wlERSryuP5P2J2C/Me36Kbc/fDtmexVObFg8Kmz4xNjAFBY8AP8e+kLSeZ7Cc5wmiBzFwDH/nzqbSGwaFFg6sonf4F+188c4/myvQ/TpYFct2b9F557wtMDW0RJ85TXD4PbCkgnyCF4KGO8T265G9uDy+MTStFtOsNhxganlpVhteimUnIdX/rQWtgk+1cFhuiFP9uMDaiNhOs3RgoQPWbjg4OM0WByawmjvashTAdpqWNZZe2UlI9WyILVhuKBrSaRUOzA2tFMUCZ1l2mmIBi7OoG6ZYODSxMEqtyZFi0QlJsT8LQ6vgkZemWMC0wl6y9g49LRB2feJypUPrz1pMdvoW1zeMyxUOzA3lKxRK+wWXxS4FMMOiDelkYtVmlp4sPRy/XOnQQockYmFj+anr86dn0/7VU5JEcgJNrCSuhPFMxs1w3OoKNvwL0UYSuYD5YZIKfsY1hVY0NVcQHp9I5o/QKnjV0IE63VpGaGX66fzKs9X57FINI+VIApZW6g1/A5OnrmmaHcuiC5Z3V9fUo65Ur5aog9Ub0mtMG18l1w0Vy7irE8phFzA3NCysVslitG5ysUx3/c/zpvBHmrrrhmJ9De2ChdIVaeKfO5+5wvlmaM0+TzOBYD8p6g7OspTE8sMpvCG0Wqd2iWqr5khwZsyqGgqGNpjNUmhzYFq9L29UO3ZlGMioZYMwwt1QrbPguaGCJ9DA8yEPR6ldiaFrBrUtodZPa793N1Tpz8JoRcQMHa2oMdWyIkY13ewaNT6F40HrolESa3o+sCt5MG2NnxPNKn08V+lJAFdnqXQr4yXRJHTXxymsQUimx8epWCYPt6pmtaZiWdDcECmc78dXM0FlTiOr+WnkNxPNTkuRKfbsf1P0tUBpYEitanZa0FSsCcTFysj4Eg4KMMtSGsy2LAnTESsTxXyucEBg/VmGSkN6OdNfLHdFoXRgZ0MlN5yYj4pFo4dusVQsC5gb0n/u4KZlbHSkoS1CJhamYsl1VjVTrSkVrv6B08RTEAs/l0587GyI8bobrd/Np0qFK3/cdFG5YIGNJ7LXrWazWWpKEa2qa0qFw3JDrHLxjiDyF2ZJovPPNM1Y3GCaMyqNaXhxlsLZkNAafanq+j2lPXDd+RVDqeMBWOigNADXYJ0ytZmNbG82ZqYH/hkdB1ofvEqc5bsYNjAhZLwbwn8Qq9TrAK4/64o+MJaegxd+NWV/JfQAXBX0AFwF0hwHD60/6/JjrC5VODA3TDg+62qA5oap3rUDXJyl0jZUHXHTt3BYbqg2MIQYJHJPkX4H73c8aBW8UgTv306m0/y7WKwBzrLgLGvAtqG4omrbVui31oW2c/G7HGAVfP/RytSaNu0XW2icIFTfri9u8/F6FrEqFjIIzVD7MCzE7rmF+dAJC73YIZsD1IbQxCL9e0qN3W1nr3606aHd7ZeL268r9FV9f9/Zrewbm5s79Urlxdu37w4P31ArPXxXPzisVF7+1RlALGhuiJz+HXDGZv1o72/o9c/opX3obL/aqRygXWQ5++jV1s9o/3Vl53Dvl70j6+UBQi/eVpw3B0eLe8bhAMO9gVnWIPf7MjbJr3uvdl4dULupLO4fbh29Q0dbmwdUrIM39f36zm797dbOkVXf8ZDx67axW9/3/m5t9T8wHoPVVTpQnOUgy0Z1h1mCbTnotYMMo+4Qh5qlXSeE5p06bWR6TgVRPZH1i4Uc2yH9u7agXd1J+kOn8FzHUz+sINjalLb5/cVZSX5hId3vDgcJW2P4Q3DFLQAHOC4wy8KDtg2D3vX4r8FCTdiveKnrka43zgdYBZ9gHPwVFg5NrDRDHWhxVrqWBayCT/UH5dAsK82xGeB+fa/vU6pCip6AocVZqfbBQwsd9NUdBZI0d66ycFDgxTQtC1gFj1XGlF45wCr4VN0QmlhXNz4rWeHplZ0AHFzaCu/KgMMl7r4GHe+fCfbD4hA9pZcPKa0mwCwLI9uxHGuMzVVCgjlLHH/CE4+ut2ziecEcKRZfb4sJUljeFnlbzIkSTdn2lueJ7XhK/JRPsALMsBjhbDhi9hzMp8yR1hPCVyGRR2I2HZ4a9K+Tj28nzbZD+Ps42A+WWSF/ELzsGPJoY6lrtN/Xivoe6Tv3RzhjisJHvRb4H7jPTGgXHmDgedK6NoQnlkajuQ5g9qOJ2ARVREqkyqbHDJDSfuzd3vM9xXeAWl1hFJnz7OsAbaByAP3Y1thgTPiIV9GVUabpH11SgmyUCQOoWsbx++Hv4vzA+bHD7Cx9hDzi3OdMCR6LRPAgyh8l7iyp3NPgmoCNsffDt4c73Kbcu8cWNzg3KaPsOTqaDykLcj6lUilXKnLuSgxRvvW5w7jl8wfOXHXl0rcb/spgTLWSCcQKtPLF4lrJYuVlsahWpWIPsYYuEGtycnLkOSytqFofhnuJdS8m1ugFYvlaBUpJag1JYn0bNywm1vw0LLXI2HC3WFSqjlY3ZMOapX/lfHm2XM4/ypfK97kD5kpTVKepKS7TVFSroahdhVJR5tZhiYWOu6WK1ldCqvxo/kO70DjO/6P5sV1oPioUFsoLheaHwkkpl1/+VLzbKjRbpwt3P661inG76qqvJkd85p7CEgv/83aXVKEPSvXVaLlRKDc+tlvHJ4XT0XbzbKp10j759OWsUZw6KZxM3T07+/TlX8uPm9//NoBdcbFGVi95I+uvDP53D7vqXV81CrONxufml5NCI99utqZazUZroXXWKOXaZzUm1unCafvBx2+oWENd9dWdiF0JtTLAxDK+nOODN29GvZC6YavdbhyXmRu2m/cLhUL+rNBqFU6KjYVPC6dTrd8et06Xz5prrW67uhU9Dwq7GjGzsMTCn8+pr6hY8ZjhEavcy/mc/8zR6v1+ruifB1mdXmTnwaGhYswFz6+wqGG5T2DVWQi/711f3ZTMyheLLspByEDjBapWuZQr0r8ci7GoZkHUMBSJRuMxw2RoWJmRNVhiYfz5ds/6KhRLBFajQq5yPoiwyiVOzg9I45F7KJZsVrJY7hKwCJ6pRVs7gVQiFXXWDWZXPdo4YdweRKPMDSPRVTxmuNWJrkZGJjtOCEwr1jsz9p/vfggazz9GyMuNZr/FHLScg8bz4xgPerWd59hTgk3oMLdKm4YqNzW9FrBbonjt4+PCcaEXC+dkFzjfXMj3IQ8F4sXKMr9Am/a3V4XIF5lFz1z48oIOz/ORd4odBQcdpRglObJGo9FoNBqNRqPRaDQajUaj0Wg0Go1Go9FoNGnyXwlqcuUSOUUuAAAAAElFTkSuQmCC"
+      height="100px" id="propic" width="100px" alt="no-img" style="margin-left: 70px; border-radius: 50%;">
+    <input type="file" accept="image/*" onchange="uploading(event)">
+    <div class="userdetails">
+    </div>
+  </div>
+  <div id="model" style="margin-left: 60px;">
+    <form action="" id="editsprofile" onsubmit="userupdate(event)">
+      <h1>userdetails</h1>
+      <input type="text" name="name" placeholder="name">
+      <input type="text" name="profileEmail" placeholder="email">
+      <input type="text" name="phone" placeholder="phone">
+      <input type="text" name="specialty" placeholder="specialty">
+      <input type="text" name="portfolioURL" placeholder="portfolioURL">
+      <input type="text" name="experience" placeholder="experience">
+      <button>added</button>
+    </form>
+  </div>
+  <script src="app.js" defer></script>
+  <script src="firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCma90IxtS8pU7UKCwXkMvsIc5ya672tew",
+      authDomain: "qq-app-26c0f.firebaseapp.com",
+      projectId: "qq-app-26c0f",
+      storageBucket: "qq-app-26c0f.appspot.com",
+      messagingSenderId: "377153145565",
+      appId: "1:377153145565:web:3b4f244bf65afb0a096934"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+
+</html>
